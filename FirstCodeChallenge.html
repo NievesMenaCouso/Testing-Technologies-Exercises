@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <body>
+<!-- Task 1 -->
+        <script>
+            function reverseString(str) {
+                // Check input
+                if(!str || str.length < 2 || typeof str !== 'string') {
+                    return 'Not valid';
+                }
+                // Make an empty array that we are gonna fill up with reordered letters
+                const revString = []
+                // Loop from the end adding the letters one by one to the empty array we had created
+                for (let i = str.length; i >= 0; i--){
+                    revString.push(str[i]);
+                }
+                // Join the array elements to display them into a string 
+                return revString.join('');
+            }
+            console.log(reverseString("Hi! I am a reversed String!"))
+        </script>     
+<!-- Task 2 -->
+        <script>
+            // Create the function to reverse the elements of an array with undefined number of elements
+            function reverseArray(... x) {  
+               console.log (x.reverse());
+            }
+            // Call the function with different types of data
+            reverseArray(1, 2, 3, 4, 5)
+            reverseArray("Hola", "qué", "tal")
+        </script>
+<!-- Task 3 -->
+        <script>
+            // Test input
+            let arrayPrice = [
+                { item: "irn bru", price: 3.25, stock: 50 },
+                { item: "fanta", price: 3.98, stock: 45 },
+                { item: "diet coke", price: 4.40, stock: 38 }, 
+                { item: "7up", price: 3.99, stock: 42 }, 
+            ]
+            // Declare the function to return in the console the most expensive item
+            function mostExpensiveItem(... {name, price, stock}) {
+                // Create a veriable to store the maximum value
+                let max = 0
+                // Loop through every element of the array to multiply each price by its stock calling the result "money"
+                for ( i=0; i < arrayPrice.length; i++ ) {
+                    money = arrayPrice[i]["price"] * arrayPrice[i]["stock"]
+                    // For each loop, if money's value is larger than max's, max's value changes to money's value in that iteration for the next one.
+                    if (max < money) {
+                        max = money 
+                        // Create a variable to store which element contained the max value at the end of the loop)
+                        maxArray = arrayPrice[i]
+                    }
+                }
+                // Display that element that we stored in the variable maxArray on the console
+                console.log(maxArray)
+            }
+            // Call the function for the test input arrayPrice
+            mostExpensiveItem(arrayPrice) 
+        </script>
+    </body>
+</html>

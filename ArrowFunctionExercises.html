@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <body>
+        <h1>hi how are you</h1>
+        <script>
+    //Q1 Write an arrow function expression called greet(). It should accept a single argument representing a person's name. It should return a greeting string
+        let greet = name => "hi " + name 
+        console.log (greet("John"))
+        console.log (greet("James"))
+    //Q2 Convert the function isEven() into an equivalent arrow function.
+        function isEven(num){
+            return num%2=== 0;
+        }
+        let IsEven = num => num%2===0
+        console.log(IsEven(9))
+        console.log(IsEven(4))
+    //Q3 Convert the following JavaScript function declaration to arrow function syntax:
+        function counterFunc(counter) {
+            if (counter > 100) {
+                counter = 0;
+            } else {
+                counter++;
+            }
+            return counter;
+        }
+        let CounterFunc = counter => {
+            if (counter > 100) {
+                counter = 0;
+            } else {
+                counter++;
+            }
+            return counter;
+        }
+        console.log(CounterFunc(150))
+        console.log(CounterFunc(30))
+    //Q4 Write an arrow function for the following JavaScript function:
+        function nameAge(name, age) {
+            console.log("Hello " + name);
+            console.log("You are " + age + " years old");
+        }
+        let NameAge = (name, age) =>{
+            console.log("Hello " + name);
+            console.log("You are " + age + " years old");
+        }
+        NameAge("Nieves", 32)
+    //Q5 Write the arrow function for the following:
+        function printOnly(){
+            console.log("printing");
+        }
+        let PrintOnly = () => "printing";
+        console.log(PrintOnly())
+    //Q6 Write the arrow function for the following:
+        function sum(num1, num2){
+        return num1 + num2
+        }
+        let Sum = (num1, num2) => num1 + num2
+        console.log(Sum(2, 3))
+        </script>
+       </body>
+
+</html>
