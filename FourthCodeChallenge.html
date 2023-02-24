@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Secret number!</title>
+  </head>
+    <body>
+        <h1 class="text-center">Secret number!</h1>
+		<p>You have 3 oportunities!<br>Guess a number between 1 and 10:<br></p>
+        <script>
+            // Create a function to choose a random number within a range
+            function getRndInteger(min, max) {
+                return Math.floor(Math.random() * (max - min)) + min;
+            }
+            // Create a variable to store the computer's choice calling for that function
+            let comp = getRndInteger(1, 11);
+            // Create a variable to store the user's choice
+            let user1 = prompt("Type a number: ");
+            // Create the conditional statements
+            if (1<=user1<=10) { // Only numbers 1-10 are part of the game
+                // Number 1 WINS
+                if (comp == user1) { 
+                    console.log("Well done! " + user1 + " is the number!");
+                // Number 1 FAILS, too big
+                } else if (comp < user1) {
+                    console.log("Your first number was " + user1 + ".");
+                    console.log (user1 + " is too big.");
+                    let user2 = prompt("Try again: "); // Ask for the second number
+                    console.log("Your second number was " + user2 + ".");
+                    if (1<=user2<=10){ // Only numbers 1-10 are part of the game
+                        // Number 2 WINS
+                        if (comp == user2) { 
+                            console.log ("Well done! " + user2 + " is the number!");
+                        // Number 2 FAILS, too small
+                        } else if (comp > user2) {
+                            console.log (user2 + " is too small.");
+                            let user3 = prompt("Last chance: "); // Ask for the 3rd number
+                            console.log("Your third number was " + user3 + ".");
+                            if (1<=user3<=10){ // Only numbers 1-10 are part of the game
+                                // Number 3 WINS
+                                if (comp == user3) {
+                                    console.log ("Well done! " + user3 + " is the number!");
+                                // Number 3 FAILS, too small
+                                } else if (comp > user3) {
+                                    console.log (user3 + " is too small. You loose!");
+                                    console.log("The number was " + comp + ".");
+                                // Number 3 FAILS, too big
+                                } else if (comp < user2) {
+                                    console.log (user3 + " is too big. You loose!");
+                                    console.log("The number was " + comp + ".");
+                                }
+                            } else { // If user3 is not 1-10
+                                console.log ("Invalid input!");
+                            }
+                        // Number 2 FAILS, too big
+                        } else if (comp < user2) {
+                            console.log (user2 + " is too big")
+                            let user3 = prompt("Last chance: "); // Ask for the 3rd number
+                            console.log("Your third number was " + user3 + ".")
+                            if (1<=user3<=10){ // Only numbers 1-10 are part of the game
+                                // Number 3 WINS
+                                if (comp == user3) {
+                                    console.log ("Well done! " + user3 + " is the number!");
+                                // Number 3 FAILS, too small
+                                } else if (comp > user3) {
+                                    console.log (user3 + " is too small. You loose!");
+                                    console.log("The number was " + comp + ".");
+                                // Number 3 FAILS, too big
+                                } else if (comp < user2) {
+                                    console.log (user3 + " is too big. You loose!");
+                                    console.log("The number was " + comp + ".");
+                                }
+                            } else { // If user3 is not 1-10
+                                console.log ("Invalid input!");
+                            }
+                        }
+                    } else {// If user2 is not 1-10
+                        console.log ("Invalid input!");
+                    }
+                // Number 1 FAILS, too small
+                } else if (comp > user1) {
+                    console.log ("Your first number was " + user1 + ".");
+                    console.log (user1 + " is too small.");
+                    let user2 = prompt("Try again: "); // Ask for the second number
+                    console.log("Your second number was " + user2 + ".");
+                    if (1<=user2<=10){ // Only numbers 1-10 are part of the game
+                        // Number 2 WINS
+                        if (comp == user2) {
+                            console.log ("Well done! " + user2 + " is the number!");
+                        // Number 2 FAILS, too small
+                        } else if (comp > user2) {
+                            console.log (user2 + " is too small.");
+                            let user3 = prompt("Last chance: "); // Ask for the 3rd number
+                            if (1<=user3<=10){ // Only numbers 1-10 are part of the game
+                                console.log("Your third number was " + user3 + ".");
+                                // Number 3 WINS
+                                if (comp == user3) {
+                                    console.log ("Well done! " + user3 + " is the number!");
+                                // Number 3 FAILS, too small
+                                } else if (comp > user3) {
+                                    console.log (user3 + " is too small. You loose!");
+                                    console.log("The number was " + comp + ".");
+                                //Number 3 FAILS, too big
+                                } else if (comp < user2) {
+                                    console.log (user3 + " is too big. You loose!");
+                                    console.log("The number was " + comp + ".");
+                                } 
+                            } else { // If user3 is not 1-10
+                                console.log ("Invalid input!");
+                            } 
+                        // Number 2 FAILS, too big
+                        } else if (comp < user2) {
+                            console.log (user2 + " is too big.");
+                            let user3 = prompt("Last chance: "); // Ask for the 3rd number
+                            console.log("Your third number was " + user3 + ".");
+                            if (1<=user3<=10){ // Only numbers 1-10 are part of the game
+                                 // Number 3 WINS
+                                if (comp == user3) {
+                                    console.log ("Well done! " + user3 + " is the number!");
+                                // Number 3 FAILS, too small
+                                } else if (comp > user3) {
+                                    console.log (user3 + " is too small. You loose!");
+                                    console.log("The number was " + comp + ".");
+                                // Number 3 FAILS, too big  
+                                } else if (comp < user2) {
+                                    console.log (user3 + " is too big. You loose!");
+                                    console.log("The number was " + comp + ".");
+                                } 
+                            } else { // If user 3 is not 1-10
+                                console.log ("Invalid input!");
+                            }
+                        } 
+                    } else { // If user2 is not 1-10
+                        console.log ("Invalid input!");
+                    }
+                }
+            } else { // If user1 is nor 1-10
+                console.log ("Invalid input!");
+            }
+        </script>
+    </body>
+</html>
