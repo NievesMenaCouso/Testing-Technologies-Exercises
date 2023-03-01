@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+	<head>
+
+		<meta charset="utf-8">
+
+		<title>Rock, Paper, Scissors!</title>
+
+	</head>
+	
+	<body>
+
+		<h1 class="text-center">Rock, Paper, Scissors!</h1>
+		<p>Choose:</p>
+		<button id="rock" data-cy="rock">Rock</button>
+		<button id="paper" data-cy="paper">Paper</button>
+		<button id="scissors" data-cy="scissors">Scissors</button><br><br>
+		<label for="userChoice">You chose: </label><br>
+		<input type="text" name="userChoice" id="userChoice" data-cy="userChoice" disabled><br><br> <!-- Where we will display the user's choice -->
+		<label for="computerChoice">The computer chose: </label><br>
+		<input type="text" name="computerChoice" id="computerChoice" data-cy="computerChoice" disabled><br><br> <!-- Where we will display the computer's choice -->
+		<label for="computerChoice">Result: </label><br>
+		<input type="text" name="result" id="result" data-cy="result" disabled><br><br> <!-- Where we will display the result of the game -->
+
+	<script>
+		
+	 	function getRndInteger(min, max) { // Create a function to choose a random number within a range
+	 		return Math.floor(Math.random() * (max - min)) + min;
+    	}
+// If user choses rock
+		document.getElementById("rock").addEventListener("click", function() { // We activate the button called "rock" to call a function that will:
+			document.getElementById("userChoice").value = ("Rock");// Display user's choice
+			let comp = getRndInteger(1, 4); // Call the function to get a random number for the range (1, 4) to be able to choose between numbers 1, 2 or 3 
+				if (comp == 1) { // We assign the value "Rock" to number one
+					document.getElementById("computerChoice").value = ("Rock")// Change the value in "computerChoice" element to "Rock" to display the computer's choice
+					document.getElementById("result").value = ('You tie!')// Rocks vs Rocks: Display you tie
+				} else if (comp == 2) { // We assign the value "Paper" to number 2
+					document.getElementById("computerChoice").value = ("Paper")// Change the value in "computerChoice" element to "Paper"
+					document.getElementById("result").value = ('Boo loser!')// Rock vs Paper: Display you loose
+				} else { // We assign the value "Scissors" to number 3
+					document.getElementById("computerChoice").value = ("Scissors")// Change the value in "computerChoice" element to "Scissors"
+					document.getElementById("result").value = ('You win!') // Rock vs Scissors: Display you win
+				}
+		})
+// If user chooses paper
+		document.getElementById("paper").addEventListener("click", function() {
+			document.getElementById("userChoice").value = ("Paper");
+			let comp = getRndInteger(1, 4); // Display user's choice
+			 // Computer chooses a random number from 0 to 2
+				if (comp == 1) {
+					document.getElementById("computerChoice").value = ("Rock")
+					document.getElementById("result").value = ('You win!')
+				} else if (comp == 2) {
+					document.getElementById("computerChoice").value = ("Paper")
+					document.getElementById("result").value = ('You tie!')
+				} else {
+					document.getElementById("computerChoice").value = ("Scissors")
+					document.getElementById("result").value = ('Boo loser!')
+				}
+		})
+// If user chooses scissors
+		document.getElementById("scissors").addEventListener("click", function() {
+			document.getElementById("userChoice").value = ("Scissors");
+			let comp = getRndInteger(1, 4); // Display user's choice
+			 // Computer chooses a random number from 0 to 2
+				if (comp == 1) {
+					document.getElementById("computerChoice").value = ("Rock")
+					document.getElementById("result").value = ('Boo loser!')
+				} else if (comp == 2) {
+					document.getElementById("computerChoice").value = ("Paper")
+					document.getElementById("result").value = ('You win!')
+				} else {
+					document.getElementById("computerChoice").value = ("Scissors")
+					document.getElementById("result").value = ('You tie!')
+				}
+		})
+		
+
+	</script>
